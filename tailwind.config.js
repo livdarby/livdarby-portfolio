@@ -3,8 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      gradientColorStopPositions: {
-        33: "5%",
+      fontFamily: {
+        title: "Playfair Display",
+        marker: "Permanent Marker",
+        body: "Open Sans",
       },
     },
   },
