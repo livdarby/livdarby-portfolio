@@ -1,5 +1,12 @@
+import "./styles/index.css";
+import React from "react";
+
 function App() {
-  return <h1>Hello Project 2!</h1>
+  return (
+    <>
+      <div className="uppercase tracking-wide">Portfolio</div>
+    </>
+  );
 }
 
-export default App
+export default App;
