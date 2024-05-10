@@ -1,12 +1,16 @@
 import "./styles/index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
+import LogoPage from "./components/LogoPage";
 
 function App() {
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-[#2a2a2a]">
-        <img src="../assets/liv.png" alt="Logo" className="w-[30%]" />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LogoPage />} />
+        </Routes>
+      </Router>
     </>
   );
 }
