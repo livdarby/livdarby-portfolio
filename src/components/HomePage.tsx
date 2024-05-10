@@ -118,7 +118,7 @@ function HomePage() {
                       src="../../assets/pp-gif.gif"
                       alt="App gif"
                     />
-                    <p className="font-body normal-case font-normal md:text-xs">
+                    <p className="font-body normal-case font-normal text-base">
                       A Premier League predictions app, that enables members to
                       input and edit predictions for upcoming match weeks. The
                       code checks predictions against match scores, awarding
