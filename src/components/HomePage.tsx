@@ -8,6 +8,18 @@ function HomePage() {
   const [quizHidden, setQuizHidden] = useState(true);
   const [shopHidden, setShopHidden] = useState(true);
 
+  const frontEndSkills = ["JavaScript", "HTML", "CSS", "TypeScript", "React"];
+  const backEndSkills = [
+    "JavaScript",
+    "Express.js",
+    "Node.js",
+    "Python",
+    "Flask",
+    "SQLAlchemy",
+  ];
+  const databaseSkills = ["SQL", "PostgreSQL", "MongoDB"];
+  const tools = ["Git", "GitHub", "Insomnia", "TablePlus", "Mongo Atlas"];
+
   function handleSkillsClick() {
     logosHidden ? setLogosHidden(false) : setLogosHidden(true);
     !projectListHidden && setProjectListHidden(true);
@@ -30,6 +42,7 @@ function HomePage() {
       : setPremierPicksHidden(true);
     !gameHidden && setGameHidden(true);
     !quizHidden && setQuizHidden(true);
+    !shopHidden && setShopHidden(true);
   }
 
   function gameClick() {
@@ -67,7 +80,48 @@ function HomePage() {
               </p>
               <img src="../assets/plus.png" className="max-h-3" />
             </span>
-            <p hidden={logosHidden}>Confident:</p>
+            <div className="flex gap-2 normal-case tracking-wider">
+              {!logosHidden &&
+                frontEndSkills.map((skill) => {
+                  return (
+                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
+                      {skill}
+                    </div>
+                  );
+                })}
+            </div>
+            <div className="flex gap-2 normal-case tracking-wider">
+              {!logosHidden &&
+                backEndSkills.map((skill) => {
+                  return (
+                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
+                      {skill}
+                    </div>
+                  );
+                })}
+            </div>
+            <div className="flex gap-2 normal-case tracking-wider">
+              {!logosHidden &&
+                databaseSkills.map((skill) => {
+                  return (
+                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
+                      {skill}
+                    </div>
+                  );
+                })}
+            </div>
+            <div className="flex gap-2 normal-case tracking-wider">
+              {!logosHidden &&
+                tools.map((skill) => {
+                  return (
+                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
+                      {skill}
+                    </div>
+                  );
+                })}
+            </div>
+
+            {/* <p hidden={logosHidden}>Confident:</p>
             {!logosHidden && (
               <div className="flex gap-2">
                 <img
@@ -106,7 +160,7 @@ function HomePage() {
                   className="h-10"
                 />
               </div>
-            )}
+            )} */}
           </div>
           <hr />
           <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-col gap-1 justify-center">
@@ -120,10 +174,10 @@ function HomePage() {
               <img src="../assets/plus.png" className="max-h-3" />
             </div>
             {!projectListHidden && (
-              <ul className="cursor-default list-disc ml-6 font-body normal-case">
+              <ul className="cursor-default list-disc ml-6 font-garamond normal-case text-lg">
                 <li
                   onClick={handlePremierPicksClick}
-                  className="hover:text-lg hover:text-[#177561] cursor-pointer  my-2"
+                  className="hover:text-xl hover:text-[#177561] cursor-pointer  my-2"
                 >
                   Premier Picks
                 </li>
@@ -139,7 +193,7 @@ function HomePage() {
                       src="../../assets/pp-gif.gif"
                       alt="App gif"
                     />
-                    <p className="font-body normal-case font-normal text-base">
+                    <p className="font-garamond normal-case font-normal">
                       A Premier League predictions app, that enables members to
                       input and edit predictions for upcoming match weeks. The
                       code checks predictions against match scores, awarding
@@ -161,7 +215,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={gameClick}
-                  className="hover:text-lg hover:text-[#177561] cursor-pointer my-2"
+                  className="hover:text-xl hover:text-[#177561] cursor-pointer my-2"
                 >
                   Cabbage Patch Protector
                 </li>
@@ -172,7 +226,7 @@ function HomePage() {
                       alt="Cabbage Patch Protector gameplay gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body normal-case font-normal">
+                    <p className="font-garamond normal-case font-normal">
                       An original twist on the classic Minesweeper game. Cabbage
                       Patch Protector is a JavaScript grid-based game that is
                       playable on desktop across three difficulty levels.
@@ -194,7 +248,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={quizClick}
-                  className="hover:text-lg hover:text-[#177561] cursor-pointer my-2"
+                  className="hover:text-xl hover:text-[#177561] cursor-pointer my-2"
                 >
                   Quiz Game
                 </li>
@@ -205,7 +259,7 @@ function HomePage() {
                       alt="Quiz Game example gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body normal-case font-normal">
+                    <p className="font-garamond normal-case font-normal">
                       A mutliple choice quiz game, fetching 10 random general
                       knowledge questions from the Open Trivia public API.
                       Players select one of four possible answers, and their
@@ -225,7 +279,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={shopClick}
-                  className="hover:text-lg hover:text-[#177561] cursor-pointer my-2"
+                  className="hover:text-xl hover:text-[#177561] cursor-pointer my-2"
                 >
                   GourmetVoyage E-Shop
                 </li>
@@ -236,7 +290,7 @@ function HomePage() {
                       alt="GourmetVoyage site walkthrough gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body normal-case font-normal">
+                    <p className="font-garamond normal-case font-normal">
                       Buyers can browse, 'purchase' and leave reviews on
                       products that are posted to the site via the seller
                       portal. Sellers can create, update and edit their products

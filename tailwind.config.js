@@ -7,6 +7,7 @@ export default {
         title: "Playfair Display",
         marker: "Permanent Marker",
         body: "Open Sans",
+        garamond: "Garamond"
       },
     },
   },
