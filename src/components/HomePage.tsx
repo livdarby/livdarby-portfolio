@@ -5,12 +5,16 @@ function HomePage() {
   const [projectListHidden, setProjectListHidden] = useState(true);
   const [premierPicksHidden, setPremierPicksHidden] = useState(true);
   const [gameHidden, setGameHidden] = useState(true);
+  const [quizHidden, setQuizHidden] = useState(true);
+  const [shopHidden, setShopHidden] = useState(true);
 
   function handleSkillsClick() {
     logosHidden ? setLogosHidden(false) : setLogosHidden(true);
     !projectListHidden && setProjectListHidden(true);
     !premierPicksHidden && setPremierPicksHidden(true);
     !gameHidden && setGameHidden(true);
+    !quizHidden && setQuizHidden(true);
+    !shopHidden && setShopHidden(true);
   }
 
   function handleProjectsClick() {
@@ -25,11 +29,28 @@ function HomePage() {
       ? setPremierPicksHidden(false)
       : setPremierPicksHidden(true);
     !gameHidden && setGameHidden(true);
+    !quizHidden && setQuizHidden(true);
   }
 
   function gameClick() {
     gameHidden ? setGameHidden(false) : setGameHidden(true);
     !premierPicksHidden && setPremierPicksHidden(true);
+    !quizHidden && setQuizHidden(true);
+    !shopHidden && setShopHidden(true);
+  }
+
+  function quizClick() {
+    quizHidden ? setQuizHidden(false) : setQuizHidden(true);
+    !premierPicksHidden && setPremierPicksHidden(true);
+    !gameHidden && setGameHidden(true);
+    !shopHidden && setShopHidden(true);
+  }
+
+  function shopClick() {
+    shopHidden ? setShopHidden(false) : setShopHidden(true);
+    !premierPicksHidden && setPremierPicksHidden(true);
+    !gameHidden && setGameHidden(true);
+    !quizHidden && setQuizHidden(true);
   }
 
   return (
@@ -171,12 +192,69 @@ function HomePage() {
                     </p>
                   </div>
                 )}
-                <li className="hover:text-lg hover:text-[#177561] cursor-pointer my-2">
+                <li
+                  onClick={quizClick}
+                  className="hover:text-lg hover:text-[#177561] cursor-pointer my-2"
+                >
                   Quiz Game
                 </li>
-                <li className="hover:text-lg hover:text-[#177561] cursor-pointer my-2">
+                {!quizHidden && (
+                  <div className="md:flex items-center gap-5 -ml-6 sm:ml-0">
+                    <img
+                      src="../../assets/quiz.gif"
+                      alt="Quiz Game example gif"
+                      className="my-5 w-96 shadow-lg rounded border"
+                    />
+                    <p className="font-body normal-case font-normal">
+                      A mutliple choice quiz game, fetching 10 random general
+                      knowledge questions from the Open Trivia public API.
+                      Players select one of four possible answers, and their
+                      score is revealed once the quiz is completed.
+                      <br />
+                      <p className="my-2 font-semibold">
+                        <a
+                          className="underline"
+                          target="_blank"
+                          href="https://catherine-liv-project-2.netlify.app/"
+                        >
+                          Click here to play!
+                        </a>
+                      </p>
+                    </p>
+                  </div>
+                )}
+                <li
+                  onClick={shopClick}
+                  className="hover:text-lg hover:text-[#177561] cursor-pointer my-2"
+                >
                   GourmetVoyage E-Shop
                 </li>
+                {!shopHidden && (
+                  <div className="md:flex items-center gap-5 -ml-6 sm:ml-0">
+                    <img
+                      src="../../assets/shop.gif"
+                      alt="GourmetVoyage site walkthrough gif"
+                      className="my-5 w-96 shadow-lg rounded border"
+                    />
+                    <p className="font-body normal-case font-normal">
+                      Buyers can browse, 'purchase' and leave reviews on
+                      products that are posted to the site via the seller
+                      portal. Sellers can create, update and edit their products
+                      and the have access to a dashboard which shows units per
+                      product and total units sold.
+                      <br />
+                      <p className="my-2 font-semibold">
+                        <a
+                          className="underline"
+                          target="_blank"
+                          href="https://gourmet-e-shop-front.netlify.app/"
+                        >
+                          Take a look!
+                        </a>
+                      </p>
+                    </p>
+                  </div>
+                )}
               </ul>
             )}
           </div>
