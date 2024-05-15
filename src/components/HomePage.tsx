@@ -120,47 +120,6 @@ function HomePage() {
                   );
                 })}
             </div>
-
-            {/* <p hidden={logosHidden}>Confident:</p>
-            {!logosHidden && (
-              <div className="flex gap-2">
-                <img
-                  src="../../assets/js.png"
-                  alt="JavaScript logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/react.png"
-                  alt="React logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/python.png"
-                  alt="Python logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/node.jpg"
-                  alt="Node.js logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/flask.webp"
-                  alt="Flask logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/express.png"
-                  alt="Express logo"
-                  className="h-10"
-                />
-                <img
-                  src="../../assets/git.png"
-                  alt="Git logo"
-                  className="h-10"
-                />
-              </div>
-            )} */}
           </div>
           <hr />
           <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-col gap-1 justify-center">
@@ -182,7 +141,7 @@ function HomePage() {
                   Premier Picks
                 </li>
                 {!premierPicksHidden && (
-                  <div className="md:flex gap-5 items-center -ml-6 sm:mx-0">
+                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
                     {/* <img
                       className="h-48 my-5 shadow-lg rounded border"
                       src="../../assets/premier-picks.png"
@@ -193,13 +152,12 @@ function HomePage() {
                       src="../../assets/pp-gif.gif"
                       alt="App gif"
                     />
-                    <p className="font-garamond normal-case font-normal">
+                    <p className="font-garamond normal-case font-normal text-center md:text-left">
                       A Premier League predictions app, that enables members to
                       input and edit predictions for upcoming match weeks. The
                       code checks predictions against match scores, awarding
-                      points according to the user's accuracy. User points are
-                      displayed in the league leaderboard, which is sorted
-                      according to total points scored.
+                      points for user accuracy. User points are displayed in the
+                      league leaderboard, which is sorted in descending order.
                       <br />
                       <p className="my-2 font-semibold">
                         <a
