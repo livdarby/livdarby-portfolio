@@ -27,7 +27,10 @@ function Footer() {
 
     emailjs
       .send(
-        // EmailJS service ID, template Id and user ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formData,
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
         (result) => {
