@@ -8,17 +8,25 @@ function HomePage() {
   const [quizHidden, setQuizHidden] = useState(true);
   const [shopHidden, setShopHidden] = useState(true);
 
-  const frontEndSkills = ["JavaScript", "HTML", "CSS", "TypeScript", "React"];
-  const backEndSkills = [
-    "JavaScript",
-    "Express.js",
-    "Node.js",
-    "Python",
-    "Flask",
+  const languages = ["JavaScript", "TypeScript", "Python"];
+  const frontEnd = ["React", "HTML", "CSS", "Tailwind CSS", "Bulma"];
+  const backEnd = ["Node.js", "Express", "Flask"];
+  const databaseSkills = [
+    "SQL",
+    "PostgreSQL",
+    "MongoDB",
     "SQLAlchemy",
+    "Mongoose",
   ];
-  const databaseSkills = ["SQL", "PostgreSQL", "MongoDB"];
-  const tools = ["Git", "GitHub", "Insomnia", "TablePlus", "Mongo Atlas"];
+  const deployment = [
+    "Heroku",
+    "Netlify",
+    "Git",
+    "GitHub",
+    "Insomnia",
+    "TablePlus",
+    "Mongo Atlas",
+  ];
 
   function handleSkillsClick() {
     logosHidden ? setLogosHidden(false) : setLogosHidden(true);
@@ -70,7 +78,7 @@ function HomePage() {
     <>
       <section className="bg-[#2a2a2a] h-screen flex flex-col justify-center">
         <div className="py-5 bg-[#e4e2dd] px-5 lg:mx-[20%] md:mx-[5%] min-h-[80%] max-h-content flex flex-col justify-center gap-5 my-auto">
-          <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-col gap-1">
+          <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-wrap gap-1">
             <span
               onClick={handleSkillsClick}
               className="flex items-center gap-1 cursor-pointer"
@@ -80,46 +88,92 @@ function HomePage() {
               </p>
               <img src="../assets/plus.png" className="max-h-3" />
             </span>
-            <div className="flex gap-2 normal-case tracking-wider">
-              {!logosHidden &&
-                frontEndSkills.map((skill) => {
-                  return (
-                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
-                      {skill}
-                    </div>
-                  );
-                })}
-            </div>
-            <div className="flex gap-2 normal-case tracking-wider">
-              {!logosHidden &&
-                backEndSkills.map((skill) => {
-                  return (
-                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
-                      {skill}
-                    </div>
-                  );
-                })}
-            </div>
-            <div className="flex gap-2 normal-case tracking-wider">
-              {!logosHidden &&
-                databaseSkills.map((skill) => {
-                  return (
-                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
-                      {skill}
-                    </div>
-                  );
-                })}
-            </div>
-            <div className="flex gap-2 normal-case tracking-wider">
-              {!logosHidden &&
-                tools.map((skill) => {
-                  return (
-                    <div className="rounded px-2 my-1 w-fit bg-[#2a2a2a] text-[#e4e2dd] text-sm">
-                      {skill}
-                    </div>
-                  );
-                })}
-            </div>
+            <div className="w-[100%]"></div>
+
+            {!logosHidden && (
+              <>
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
+                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                    Languages
+                  </p>
+                  {languages.map((skill) => {
+                    return (
+                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                        {skill}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {!logosHidden && (
+              <>
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
+                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                    Front-end frameworks
+                  </p>
+                  {frontEnd.map((skill) => {
+                    return (
+                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                        {skill}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {!logosHidden && (
+              <>
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
+                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                    Back-end frameworks
+                  </p>
+                  {backEnd.map((skill) => {
+                    return (
+                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                        {skill}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {!logosHidden && (
+              <>
+                <div className="flex my-2 gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
+                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                    Databases
+                  </p>
+                  {databaseSkills.map((skill) => {
+                    return (
+                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                        {skill}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {!logosHidden && (
+              <>
+                <div className="flex my-2 gap-1 md:gap-2 w-[100%] md:w-[55%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
+                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                    Deployment & Tools
+                  </p>
+                  {deployment.map((skill) => {
+                    return (
+                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                        {skill}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
           <hr />
           <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-col gap-1 justify-center">
