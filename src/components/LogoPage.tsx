@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./HomePage";
+import Footer from "./Footer";
 
 function LogoPage() {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ function LogoPage() {
         </div>
       }
       <HomePage />
+      <Footer />
     </>
   );
 }
