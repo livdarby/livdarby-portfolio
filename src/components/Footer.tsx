@@ -8,13 +8,23 @@ function Footer() {
     email: "",
     message: "",
   });
-  console.log(emailPopUpHidden);
+  const [emailJsMessage, setEmailJsMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleClick() {
     emailPopUpHidden ? setEmailPopUpHidden(false) : setEmailPopUpHidden(true);
   }
 
+  function handleCloseButton() {
+    setFormData({ name: "", email: "", message: "" });
+    setEmailJsMessage("");
+    setErrorMessage("");
+    setEmailPopUpHidden(true)
+  }
+
   function handleChange(e: any) {
+    setEmailJsMessage("");
+    setErrorMessage("");
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -23,25 +33,31 @@ function Footer() {
   }
 
   const handleSubmit = (e: any) => {
+    setEmailJsMessage("");
     e.preventDefault();
 
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then(
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+
+    console.log(serviceId, templateId, userId);
+
+    if (serviceId && templateId && userId) {
+      emailjs.send(serviceId, templateId, formData, userId).then(
         (result) => {
           console.log(result.text);
-          alert("Email sent successfully!");
+          //   alert("Email sent successfully!");
+          setEmailJsMessage(
+            "Email sent successfully! I will be in touch with you soon."
+          );
         },
         (error) => {
           console.log(error.text);
-          alert("Failed to send email. Please try again later.");
+          //   alert("Failed to send email. Please try again later.");
+          setErrorMessage("Failed to send email. Please try again later.");
         }
       );
+    }
   };
 
   return (
@@ -49,12 +65,18 @@ function Footer() {
       <nav className="flex justify-evenly bg-[#2a2a2a] opacity-90 relative">
         <li
           onClick={handleClick}
-          className=" list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:text-[#2a2a2a]"
+          className=" list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline"
         >
           Contact Me{" "}
         </li>
+
         {!emailPopUpHidden && (
           <div className="-my-[50%] md:bottom-[100%] bottom-[50%] bg-white fixed py-10 px-4 border rounded-xl max-w-[90%] md:max-w-[30%] flex flex-col items-center gap-4">
+            <p onClick={handleCloseButton} className="cursor-pointer w-[90%] font-bold text-right">X</p>
+            {emailJsMessage && (
+              <p className="font-garamond">{emailJsMessage}</p>
+            )}
+            {errorMessage && <p className="font-garamond">{errorMessage}</p>}
             <p className="uppercase font-semibold text-sm tracking-wide text-center">
               If you have any questions or would like further information,
               please get in touch.
@@ -134,10 +156,10 @@ function Footer() {
           </div>
         )}
 
-        <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:text-[#2a2a2a]">
+        <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline">
           LinkedIn
         </li>
-        <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:text-[#2a2a2a]">
+        <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline">
           GitHub
         </li>
       </nav>
