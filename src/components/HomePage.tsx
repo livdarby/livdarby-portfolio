@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function HomePage() {
   const [logosHidden, setLogosHidden] = useState(true);
@@ -116,33 +117,39 @@ function HomePage() {
 
   return (
     <>
-      <section id="home" className="bg-[#2a2a2a] h-screen flex flex-col justify-center">
-        <div className="py-5 bg-[#e4e2dd] px-5 lg:mx-[20%] md:mx-[5%] min-h-[80%] max-h-content flex flex-col justify-center gap-5 my-auto">
+      <section
+        id="home"
+        className="bg-[#2a2a2a] min-h-screen grid grid-rows-1 justify-center grid-cols-1"
+      >
+        <div className="row-span-1 py-5 bg-[#e4e2dd] px-5 lg:mx-[20%] md:mx-[5%] min-h-[80%] max-h-content flex flex-col justify-center gap-5 my-auto">
           <div
             onClick={handleAboutMeClick}
-            className="uppercase font-semibold tracking-wide text-gray-800 flex gap-1 items-center cursor-pointer"
+            className="group uppercase font-semibold tracking-wide text-gray-800 flex gap-1 items-center cursor-pointer"
           >
-            <p className="font-title font-extrabold tracking-wider text-lg">
+            <p className="hover:scale-110 hover:mx-2 font-title font-extrabold tracking-wider text-lg">
               about me
             </p>
-            <img src="../assets/plus.png" className="max-h-3" />
+            <img
+              src="../assets/plus.png"
+              className="max-h-3 group-hover:animate-spin-slow"
+            />
           </div>
           {!aboutMeHidden && (
             <>
-              <div>
-                <p className="font-garamond text-lg">Hi 👋 </p>
-                <p className="font-garamond text-lg">
+              <div className="bg-[#f9f9f8] rounded px-2 py-1 text-center shadow-md">
+                <p className="font-garamond text-lg leading-relaxed">Hi 👋 </p>
+                <p className="font-garamond text-lg leading-relaxed">
                   I'm Olivia (I also go by Liv!) and I'm a full-stack junior
                   developer based in London.
                 </p>
-                <p className="font-garamond text-lg">
+                <p className="font-garamond text-lg leading-relaxed">
                   I have experience with{" "}
                   <span className="font-bold">
                     React, Node, Express, HTML and CSS,
                   </span>{" "}
                   amongst others.
                 </p>
-                <p className="font-garamond text-lg">
+                <p className="font-garamond text-lg leading-relaxed">
                   My background is in Account Management and Business
                   Development in the influencer and affiliate marketing
                   industry. I've always had a passion for fashion and beauty
@@ -151,13 +158,13 @@ function HomePage() {
                   career, including Nike, Selfridges, Space NK & Charlotte
                   Tilbury.
                 </p>
-                <p className="font-garamond text-lg">
+                <p className="font-garamond text-lg leading-relaxed">
                   As a Business Developer Manager, I oversaw the technical
                   integration and launch of my clients and worked closely with
                   dev teams. This exposure, coupled with my solutions-driven
                   mindset, sparked my interest in software development.
                 </p>
-                <p className="font-garamond text-lg">
+                <p className="font-garamond text-lg leading-relaxed">
                   I knew I wanted to pursue a career change, so I took the leap
                   and completed a full-time Software Engineering Bootcamp with
                   General Assembly between January and April 2024. This was the
@@ -165,32 +172,27 @@ function HomePage() {
                   for coding.
                 </p>
               </div>
-
-              <div>
-                <h1 className="font-title font-bold tracking-wider uppercase">
-                  Currently watching...
-                </h1>
-              </div>
-              <div>
-                <h1 className="font-title font-bold tracking-wider uppercase">
-                  Currently doing...
-                </h1>
-              </div>
             </>
           )}
 
           <hr />
 
           <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-wrap gap-1">
-            <span
-              onClick={handleSkillsClick}
-              className="flex items-center gap-1 cursor-pointer"
-            >
-              <p className="font-title font-extrabold tracking-wider text-lg">
-                skills
-              </p>
-              <img src="../assets/plus.png" className="max-h-3" />
-            </span>
+            <div className="group">
+              <span
+                onClick={handleSkillsClick}
+                className="flex items-center gap-1 cursor-pointer"
+              >
+                <p className="hover:scale-110 hover:mx-2 font-title font-extrabold tracking-wider text-lg">
+                  skills
+                </p>
+                <img
+                  src="../assets/plus.png"
+                  className="max-h-3 group-hover:animate-spin-slow"
+                />
+              </span>
+            </div>
+
             <div className="w-[100%]"></div>
 
             {!logosHidden && (
@@ -282,12 +284,15 @@ function HomePage() {
           <div className="uppercase font-semibold tracking-wide text-gray-800 flex flex-col gap-1 justify-center">
             <div
               onClick={handleProjectsClick}
-              className="flex items-center gap-1 cursor-pointer"
+              className="flex items-center gap-1 cursor-pointer group"
             >
-              <p className="font-title font-extrabold tracking-wider text-lg">
+              <p className="hover:scale-110 hover:mx-2 font-title font-extrabold tracking-wider text-lg">
                 projects
               </p>
-              <img src="../assets/plus.png" className="max-h-3" />
+              <img
+                src="../assets/plus.png"
+                className="max-h-3 group-hover:animate-spin-slow"
+              />
             </div>
             {!projectListHidden && (
               <ul className="cursor-default list-disc ml-6 font-garamond normal-case text-lg">
@@ -450,7 +455,7 @@ function HomePage() {
             <div className="w-[40%] h-[100%] flex flex-col justify-center">
               <h1>Learning</h1>
               <iframe
-              className="w-[100%] h-[80%]"
+                className="w-[100%] h-[80%]"
                 // type="text/html"
                 sandbox="allow-scripts allow-same-origin allow-popups"
                 allowFullScreen
@@ -460,6 +465,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+        <Footer />
       </section>
     </>
   );

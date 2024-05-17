@@ -62,7 +62,7 @@ function Footer() {
 
   return (
     <>
-      <nav className="flex justify-evenly bg-[#2a2a2a] opacity-90 relative">
+      <nav className="pb-5 pt-2 flex justify-evenly bg-[#424242] relative">
         <li
           onClick={handleClick}
           className=" list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline"
@@ -72,7 +72,12 @@ function Footer() {
 
         {!emailPopUpHidden && (
           <div className="-my-[50%] md:bottom-[100%] bottom-[50%] bg-white fixed py-10 px-4 border rounded-xl max-w-[90%] md:max-w-[30%] flex flex-col items-center gap-4">
-            <p onClick={handleCloseButton} className="cursor-pointer w-[90%] font-bold text-right">X</p>
+            <p
+              onClick={handleCloseButton}
+              className="cursor-pointer w-[90%] font-bold text-right"
+            >
+              X
+            </p>
             {emailJsMessage && (
               <p className="font-garamond">{emailJsMessage}</p>
             )}
