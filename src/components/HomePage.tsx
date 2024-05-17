@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function HomePage() {
   const [logosHidden, setLogosHidden] = useState(true);
@@ -8,6 +8,29 @@ function HomePage() {
   const [gameHidden, setGameHidden] = useState(true);
   const [quizHidden, setQuizHidden] = useState(true);
   const [shopHidden, setShopHidden] = useState(true);
+  const [currentMonth, setCurrentMonth] = useState<null | string>(null);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  useEffect(() => {
+    function getMonth() {
+      const month = new Date().getMonth();
+      setCurrentMonth(months[month]);
+    }
+    getMonth();
+  }, []);
 
   const languages = ["JavaScript", "TypeScript", "Python"];
   const frontEnd = ["React", "HTML", "CSS", "Tailwind CSS", "Bulma"];
@@ -93,7 +116,7 @@ function HomePage() {
 
   return (
     <>
-      <section className="bg-[#2a2a2a] h-screen flex flex-col justify-center">
+      <section id="home" className="bg-[#2a2a2a] h-screen flex flex-col justify-center">
         <div className="py-5 bg-[#e4e2dd] px-5 lg:mx-[20%] md:mx-[5%] min-h-[80%] max-h-content flex flex-col justify-center gap-5 my-auto">
           <div
             onClick={handleAboutMeClick}
@@ -142,17 +165,7 @@ function HomePage() {
                   for coding.
                 </p>
               </div>
-              <div>
-                <h1 className="font-title font-bold tracking-wider">
-                  Currently listening to...
-                </h1>
-                <iframe
-                  className="border-radius:12px my-2 h-40 w-[40%]"
-                  src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-              </div>
+
               <div>
                 <h1 className="font-title font-bold tracking-wider uppercase">
                   Currently watching...
@@ -410,6 +423,42 @@ function HomePage() {
             )}
           </div>
           <hr />
+          <div className="flex gap-4 justify-center mx-2 items-center">
+            <div className="w-[50%]">
+              <h1>What's trending in {currentMonth}?</h1>
+              <div>
+                <h1>Listening</h1>
+                <iframe
+                  className="border-radius:12px my-2 h-40 w-[100%]"
+                  src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div>
+                <h1>Watching</h1>
+                <iframe
+                  className="border-radius:12px rounded-xl my-2 h-40 w-[100%]"
+                  src="https://www.youtube.com/embed/9k9NMbQe0C4?si=UvnHHtX2L8sCT-2y"
+                  title="YouTube video player"
+                  allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="w-[40%] h-[100%] flex flex-col justify-center">
+              <h1>Learning</h1>
+              <iframe
+              className="w-[100%] h-[80%]"
+                // type="text/html"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                allowFullScreen
+                // style="max-width:100%"
+                src="https://read.amazon.co.uk/kp/card?asin=B01D3WHZZO&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_MNNQDRW9CEKYS74NSJN7"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
     </>
