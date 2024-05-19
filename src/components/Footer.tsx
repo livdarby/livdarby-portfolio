@@ -1,5 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import github from "../../assets/github.png"
+import linkedin from "../../assets/linkedin.png"
 
 function Footer() {
   const [emailPopUpHidden, setEmailPopUpHidden] = useState(true);
@@ -136,7 +138,7 @@ function Footer() {
             <div className="flex gap-2">
               <a href="https://github.com/livdarby" target="_blank">
                 <img
-                  src="../../assets/github.png"
+                  src={github}
                   className="h-8 cursor-pointer"
                   alt="GitHub link"
                 />
@@ -146,7 +148,7 @@ function Footer() {
                 target="_blank"
               >
                 <img
-                  src="../../assets/linkedin.png"
+                  src={linkedin}
                   className="h-8 cursor-pointer"
                   alt="Linkedin link"
                 />

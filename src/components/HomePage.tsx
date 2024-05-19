@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
+import cpp from "../../assets/cpp-gif.gif"
+import plus from "../../assets/plus.png"
+import pp from "../../assets/pp-gif.gif"
+import quiz from "../../assets/quiz.gif"
+import shop from "../../assets/shop.gif"
 
 function HomePage() {
   const [logosHidden, setLogosHidden] = useState(true);
@@ -130,7 +135,7 @@ function HomePage() {
               about me
             </p>
             <img
-              src="../assets/plus.png"
+              src={plus}
               className="max-h-3 group-hover:animate-spin-slow"
             />
           </div>
@@ -187,7 +192,7 @@ function HomePage() {
                   skills
                 </p>
                 <img
-                  src="../assets/plus.png"
+                  src={plus}
                   className="max-h-3 group-hover:animate-spin-slow"
                 />
               </span>
@@ -290,7 +295,7 @@ function HomePage() {
                 projects
               </p>
               <img
-                src="../assets/plus.png"
+                src={plus}
                 className="max-h-3 group-hover:animate-spin-slow"
               />
             </div>
@@ -306,7 +311,7 @@ function HomePage() {
                   <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
                     <img
                       className="my-5 h-48 shadow-lg rounded border"
-                      src="../../assets/pp-gif.gif"
+                      src={pp}
                       alt="App gif"
                     />
                     <p className="font-garamond normal-case font-normal text-center md:text-left">
@@ -337,7 +342,7 @@ function HomePage() {
                 {!gameHidden && (
                   <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
                     <img
-                      src="../../assets/cpp-gif.gif"
+                      src={cpp}
                       alt="Cabbage Patch Protector gameplay gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
@@ -370,7 +375,7 @@ function HomePage() {
                 {!quizHidden && (
                   <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
                     <img
-                      src="../../assets/quiz.gif"
+                      src={quiz}
                       alt="Quiz Game example gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
@@ -401,7 +406,7 @@ function HomePage() {
                 {!shopHidden && (
                   <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
                     <img
-                      src="../../assets/shop.gif"
+                      src={shop}
                       alt="GourmetVoyage site walkthrough gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
