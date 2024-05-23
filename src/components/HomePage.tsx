@@ -7,7 +7,7 @@ import quiz from "../../assets/quiz.gif";
 import shop from "../../assets/shop.gif";
 import linkedin from "../../assets/linkedin.png";
 import github from "../../assets/github.png";
-import email from "../../assets/email.png"
+import email from "../../assets/email.png";
 
 function HomePage() {
   const [logosHidden, setLogosHidden] = useState(true);
@@ -103,7 +103,7 @@ function HomePage() {
     !shopHidden && setShopHidden(true);
   }
 
-  function gameClick() { 
+  function gameClick() {
     gameHidden ? setGameHidden(false) : setGameHidden(true);
     !premierPicksHidden && setPremierPicksHidden(true);
     !quizHidden && setQuizHidden(true);
@@ -494,43 +494,46 @@ function HomePage() {
             )}
           </div>
           <hr />
-          <h1 className="font-title font-extrabold tracking-wider text-lg inline mx-auto">
-            GET IN TOUCH
-          </h1>
-          <p className="font-body inline mx-auto text-center md:max-w-[80%]">
-            I am currently looking for new opportunities and keen to chat about
-            anything coding related! My inbox is always open, so please do get
-            in touch.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <a
-              href="https://www.linkedin.com/in/olivia--darby/"
-              target="_blank"
-            >
-              <img
-                src={linkedin}
-                className="h-8 cursor-pointer"
-                alt="Linkedin link"
-              />
-            </a>
-            <a href="https://github.com/livdarby" target="_blank">
-              <img
-                src={github}
-                className="h-8 cursor-pointer"
-                alt="GitHub link"
-              />
-            </a>
-            <a
-              href="mailto: oliviadarby@live.co.uk ?subject=Portfolio query  &body=Please enter your request here."
-              target="_blank"
-            >
-              <img
-                src={email}
-                className="h-8 cursor-pointer"
-                alt="GitHub link"
-              />
-            </a>
+          <div className="flex flex-col gap-2">
+            <h1 className="font-title font-extrabold tracking-wider text-lg inline mx-auto">
+              GET IN TOUCH
+            </h1>
+            <p className="font-body inline mx-auto text-center md:max-w-[80%]">
+              I am currently looking for new opportunities and keen to chat
+              about anything coding related! My inbox is always open, so please
+              do get in touch.
+            </p>
+            <div className="flex gap-4 justify-center mt-2">
+              <a
+                href="https://www.linkedin.com/in/olivia--darby/"
+                target="_blank"
+              >
+                <img
+                  src={linkedin}
+                  className="h-8 cursor-pointer"
+                  alt="Linkedin link"
+                />
+              </a>
+              <a href="https://github.com/livdarby" target="_blank">
+                <img
+                  src={github}
+                  className="h-8 cursor-pointer"
+                  alt="GitHub link"
+                />
+              </a>
+              <a
+                href="mailto: oliviadarby@live.co.uk ?subject=Portfolio query  &body=Please enter your request here."
+                target="_blank"
+              >
+                <img
+                  src={email}
+                  className="h-8 cursor-pointer"
+                  alt="GitHub link"
+                />
+              </a>
+            </div>
           </div>
+
           {/* <div className="flex gap-4 justify-center mx-2 items-center">
             <div className="w-[50%]">
               <h1>What's trending in {currentMonth}?</h1>

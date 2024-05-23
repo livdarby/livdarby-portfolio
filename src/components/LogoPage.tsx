@@ -49,7 +49,7 @@ function LogoPage() {
         <div className="flex flex-col justify-center items-center h-dvh bg-[#2a2a2a]">
           <div className="flex flex-col items-center my-auto">
             <img src={logo} alt="Logo" className="w-[80%] md:w-[40%] lg:w-[60%] my-auto" />
-            <h1 className="font-title md:text-lg lg:text-2xl text-2xl tracking-xwide text-[#e4e2dd]">
+            <h1 className="font-title w-screen text-center text-lg md:text-lg lg:text-2xl tracking-xwide text-[#e4e2dd]">
               JUNIOR DEVELOPER
             </h1>
           </div>
