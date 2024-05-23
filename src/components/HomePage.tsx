@@ -315,7 +315,7 @@ function HomePage() {
                   Premier Picks
                 </li>
                 {!premierPicksHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 ">
+                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 py-3 px-2 ">
                     <img
                       className="my-5 h-48 shadow-lg rounded border"
                       src={pp}
@@ -328,7 +328,7 @@ function HomePage() {
                       points for user accuracy. User points are displayed in the
                       league leaderboard, which is sorted in descending order.
                       <br />
-                      <div className="flex justify-center gap-2 mt-2">
+                      <div className="flex justify-center gap-2 mt-4 flex-wrap md:justify-start">
                         <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
                           React
                         </div>
@@ -342,7 +342,7 @@ function HomePage() {
                           Typescript
                         </div>
                       </div>
-                      <p className="my-2 font-semibold">
+                      <p className="my-2 mt-4 font-semibold">
                         <a
                           className="underline"
                           target="_blank"
