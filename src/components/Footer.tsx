@@ -64,7 +64,7 @@ function Footer() {
 
   return (
     <>
-      <nav className="pb-5 pt-2 flex justify-evenly bg-[#424242] relative">
+      <nav className="py-2 flex justify-evenly bg-black relative">
         <li
           onClick={handleClick}
           className=" list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline"

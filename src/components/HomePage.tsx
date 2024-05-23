@@ -125,7 +125,7 @@ function HomePage() {
     <>
       <section
         id="home"
-        className="bg-[#2a2a2a] min-h-screen grid grid-rows-1 justify-center grid-cols-1"
+        className="bg-[#2a2a2a] h-dvh grid grid-rows-1 justify-center grid-cols-1"
       >
         <div className="row-span-1 py-5 bg-[#e4e2dd] px-5 lg:mx-[20%] md:mx-[5%] min-h-[80%] max-h-content flex flex-col justify-center gap-5 my-auto">
           <div
