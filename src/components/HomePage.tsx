@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
-import cpp from "../../assets/cpp-gif.gif"
-import plus from "../../assets/plus.png"
-import pp from "../../assets/pp-gif.gif"
-import quiz from "../../assets/quiz.gif"
-import shop from "../../assets/shop.gif"
+import cpp from "../../assets/cpp-gif.gif";
+import plus from "../../assets/plus.png";
+import pp from "../../assets/pp-gif.gif";
+import quiz from "../../assets/quiz.gif";
+import shop from "../../assets/shop.gif";
 
 function HomePage() {
   const [logosHidden, setLogosHidden] = useState(true);
@@ -51,6 +51,7 @@ function HomePage() {
   const deployment = [
     "Heroku",
     "Netlify",
+    "Vercel",
     "Git",
     "GitHub",
     "Insomnia",
@@ -134,27 +135,28 @@ function HomePage() {
             <p className="hover:scale-110 hover:mx-2 font-title font-extrabold tracking-wider text-lg">
               about me
             </p>
-            <img
-              src={plus}
-              className="max-h-3 group-hover:animate-spin-slow"
-            />
+            <img src={plus} className="max-h-3 group-hover:animate-spin-slow" />
           </div>
           {!aboutMeHidden && (
             <>
               <div className="bg-[#f9f9f8] rounded px-2 py-1 text-center shadow-md">
-                <p className="font-garamond text-lg leading-relaxed">Hi 👋 </p>
-                <p className="font-garamond text-lg leading-relaxed">
-                  I'm Olivia (I also go by Liv!) and I'm a full-stack junior
-                  developer based in London.
+                <p className="font-body text-sm leading-relaxed">Hi 👋 </p>
+                <br />
+                <p className="font-body text-sm leading-relaxed">
+                  I'm Olivia (Liv!) and I'm a{" "}
+                  <span className="font-bold">full-stack junior developer</span>{" "}
+                  based in London.
                 </p>
-                <p className="font-garamond text-lg leading-relaxed">
+                <br />
+                <p className="font-body text-sm leading-relaxed">
                   I have experience with{" "}
                   <span className="font-bold">
                     React, Node, Express, HTML and CSS,
                   </span>{" "}
                   amongst others.
                 </p>
-                <p className="font-garamond text-lg leading-relaxed">
+                <br />
+                <p className="font-body text-sm leading-relaxed">
                   My background is in Account Management and Business
                   Development in the influencer and affiliate marketing
                   industry. I've always had a passion for fashion and beauty
@@ -163,18 +165,23 @@ function HomePage() {
                   career, including Nike, Selfridges, Space NK & Charlotte
                   Tilbury.
                 </p>
-                <p className="font-garamond text-lg leading-relaxed">
+                <br />
+                <p className="font-body text-sm leading-relaxed">
                   As a Business Developer Manager, I oversaw the technical
                   integration and launch of my clients and worked closely with
                   dev teams. This exposure, coupled with my solutions-driven
                   mindset, sparked my interest in software development.
                 </p>
-                <p className="font-garamond text-lg leading-relaxed">
+                <br />
+                <p className="font-body text-sm leading-relaxed">
                   I knew I wanted to pursue a career change, so I took the leap
-                  and completed a full-time Software Engineering Bootcamp with
-                  General Assembly between January and April 2024. This was the
-                  best decision I've ever made and truly solidified my passion
-                  for coding.
+                  and completed a full-time{" "}
+                  <span className="font-bold">
+                    {" "}
+                    Software Engineering Bootcamp with General Assembly
+                  </span>{" "}
+                  between January and April 2024. This was the best decision
+                  I've ever made and truly solidified my passion for coding.
                 </p>
               </div>
             </>
@@ -202,13 +209,13 @@ function HomePage() {
 
             {!logosHidden && (
               <>
-                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
-                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-4 rounded justify-center">
+                  <p className="tracking-widest mb-2 w-[100%] text-center text-[#2a2a2a]">
                     Languages
                   </p>
                   {languages.map((skill) => {
                     return (
-                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                      <div className="rounded px-3 py-1 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
                         {skill}
                       </div>
                     );
@@ -219,13 +226,13 @@ function HomePage() {
 
             {!logosHidden && (
               <>
-                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
-                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-4 rounded justify-center">
+                  <p className="tracking-widest mb-2 w-[100%] text-center text-[#2a2a2a]">
                     Front-end frameworks
                   </p>
                   {frontEnd.map((skill) => {
                     return (
-                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                      <div className="rounded px-3 py-1 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
                         {skill}
                       </div>
                     );
@@ -236,13 +243,13 @@ function HomePage() {
 
             {!logosHidden && (
               <>
-                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
-                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-4 rounded justify-center">
+                  <p className="tracking-widest mb-2 w-[100%] text-center text-[#2a2a2a]">
                     Back-end frameworks
                   </p>
                   {backEnd.map((skill) => {
                     return (
-                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                      <div className="rounded px-3 py-1 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
                         {skill}
                       </div>
                     );
@@ -253,13 +260,13 @@ function HomePage() {
 
             {!logosHidden && (
               <>
-                <div className="flex my-2 gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
-                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-4 rounded justify-center">
+                  <p className="tracking-widest mb-2 w-[100%] text-center text-[#2a2a2a]">
                     Databases
                   </p>
                   {databaseSkills.map((skill) => {
                     return (
-                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                      <div className="rounded px-3 py-1 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
                         {skill}
                       </div>
                     );
@@ -270,13 +277,13 @@ function HomePage() {
 
             {!logosHidden && (
               <>
-                <div className="flex my-2 gap-1 md:gap-2 w-[100%] md:w-[55%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-1 rounded justify-center">
-                  <p className="tracking-widest w-[100%] text-center text-[#2a2a2a] mt-4">
+                <div className="my-2 flex gap-1 md:gap-2 w-[100%] md:w-[48%] md:mx-auto  items-center flex-wrap bg-[#fbfaf9] px-2 py-4 rounded justify-center">
+                  <p className="tracking-widest mb-2 w-[100%] text-center text-[#2a2a2a]">
                     Deployment & Tools
                   </p>
                   {deployment.map((skill) => {
                     return (
-                      <div className="rounded px-3 py-1 mb-4 mt-2 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
+                      <div className="rounded px-3 py-1 w-fit bg-[#e4e2dd] text-[#2a2a2a] text-xs normal-case tracking-wider">
                         {skill}
                       </div>
                     );
@@ -300,27 +307,41 @@ function HomePage() {
               />
             </div>
             {!projectListHidden && (
-              <ul className="cursor-default list-disc ml-6 font-garamond normal-case text-lg">
+              <ul className="cursor-default list-disc ml-6 font-body normal-case text-lg">
                 <li
                   onClick={handlePremierPicksClick}
-                  className="hover:text-xl hover:text-[#787878] cursor-pointer  my-2"
+                  className="text-base hover:text-xl hover:text-[#787878] cursor-pointer  my-2"
                 >
                   Premier Picks
                 </li>
                 {!premierPicksHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
+                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 ">
                     <img
                       className="my-5 h-48 shadow-lg rounded border"
                       src={pp}
                       alt="App gif"
                     />
-                    <p className="font-garamond normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
                       A Premier League predictions app, that enables members to
                       input and edit predictions for upcoming match weeks. The
                       code checks predictions against match scores, awarding
                       points for user accuracy. User points are displayed in the
                       league leaderboard, which is sorted in descending order.
                       <br />
+                      <div className="flex justify-center gap-2 mt-2">
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          React
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Flask
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Tailwind
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Typescript
+                        </div>
+                      </div>
                       <p className="my-2 font-semibold">
                         <a
                           className="underline"
@@ -335,7 +356,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={gameClick}
-                  className="hover:text-xl hover:text-[#787878] cursor-pointer my-2"
+                  className="text-base hover:text-xl hover:text-[#787878] cursor-pointer my-2"
                 >
                   Cabbage Patch Protector
                 </li>
@@ -346,7 +367,7 @@ function HomePage() {
                       alt="Cabbage Patch Protector gameplay gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-garamond normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
                       An original twist on the classic Minesweeper game. Cabbage
                       Patch Protector is a JavaScript grid-based game that is
                       playable on desktop across three difficulty levels.
@@ -354,6 +375,17 @@ function HomePage() {
                       marking them with a jar as you go and try to beat your
                       high score!
                       <br />
+                      <div className="flex justify-center gap-2 mt-2">
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          JavaScript
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          HTML
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          CSS
+                        </div>
+                      </div>
                       <p className="my-2 font-semibold">
                         <a
                           className="underline"
@@ -368,7 +400,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={quizClick}
-                  className="hover:text-xl hover:text-[#787878] cursor-pointer my-2"
+                  className="text-base hover:text-xl hover:text-[#787878] cursor-pointer my-2"
                 >
                   Quiz Game
                 </li>
@@ -379,12 +411,23 @@ function HomePage() {
                       alt="Quiz Game example gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-garamond normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
                       A mutliple choice quiz game, fetching 10 random general
                       knowledge questions from the Open Trivia public API.
                       Players select one of four possible answers, and their
                       score is revealed once the quiz is completed.
                       <br />
+                      <div className="flex justify-center gap-2 mt-2">
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          React
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          TypeScript
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Bulma
+                        </div>
+                      </div>
                       <p className="my-2 font-semibold">
                         <a
                           className="underline"
@@ -399,7 +442,7 @@ function HomePage() {
                 )}
                 <li
                   onClick={shopClick}
-                  className="hover:text-xl hover:text-[#787878] cursor-pointer my-2"
+                  className="text-base hover:text-xl hover:text-[#787878] cursor-pointer my-2"
                 >
                   GourmetVoyage E-Shop
                 </li>
@@ -410,13 +453,27 @@ function HomePage() {
                       alt="GourmetVoyage site walkthrough gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-garamond normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
                       Buyers can browse, 'purchase' and leave reviews on
                       products that are posted to the site via the seller
                       portal. Sellers can create, update and edit their products
                       and the have access to a dashboard which shows units per
                       product and total units sold.
                       <br />
+                      <div className="flex justify-center gap-2 mt-2">
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          React
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Express
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Bulma
+                        </div>
+                        <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
+                          Typescript
+                        </div>
+                      </div>
                       <p className="my-2 font-semibold">
                         <a
                           className="underline"
@@ -433,7 +490,7 @@ function HomePage() {
             )}
           </div>
           <hr />
-          <div className="flex gap-4 justify-center mx-2 items-center">
+          {/* <div className="flex gap-4 justify-center mx-2 items-center">
             <div className="w-[50%]">
               <h1>What's trending in {currentMonth}?</h1>
               <div>
@@ -468,7 +525,7 @@ function HomePage() {
                 src="https://read.amazon.co.uk/kp/card?asin=B01D3WHZZO&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_MNNQDRW9CEKYS74NSJN7"
               ></iframe>
             </div>
-          </div>
+          </div> */}
         </div>
         <Footer />
       </section>

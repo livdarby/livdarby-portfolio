@@ -2,8 +2,8 @@ import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { scroller } from "react-scroll";
 import HomePage from "./HomePage";
 import Footer from "./Footer";
-import down from "../../assets/down-arrow.png"
-import logo from "../../assets/liv.png"
+import down from "../../assets/down-arrow.png";
+import logo from "../../assets/liv.png";
 
 function LogoPage() {
   const navigate = useNavigate();
@@ -47,19 +47,24 @@ function LogoPage() {
     <>
       {
         <div className="flex flex-col justify-center items-center h-screen bg-[#2a2a2a]">
-          <img src={logo} alt="Logo" className="w-[80%] md:w-[30%] my-auto" />
+          <div className="flex flex-col items-center my-auto">
+            <img src={logo} alt="Logo" className="w-[80%] md:w-[40%] my-auto" />
+            <h1 className="font-title md:text-lg text-2xl tracking-xwide text-[#e4e2dd]">
+              JUNIOR DEVELOPER
+            </h1>
+          </div>
           <CustomLink className="w-screen flex justify-center" scrollTo="home">
             <img
               onClick={downArrow}
               src={down}
               alt="Down arrow to read more"
-              className="w-[15%] md:w-[2%] mb-16 animate-bounce cursor-pointer scroll-smooth"
+              className="w-[8%] md:w-[4%] mb-16 animate-bounce cursor-pointer scroll-smooth"
             />
           </CustomLink>{" "}
         </div>
       }
-        <HomePage />
-        {/* <Footer /> */}
+      <HomePage />
+      {/* <Footer /> */}
     </>
   );
 }

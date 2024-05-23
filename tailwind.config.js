@@ -9,6 +9,7 @@ export default {
         body: "Open Sans",
         garamond: "Garamond",
       },
+      letterSpacing: { xwide: ".5em" },
       keyframes: {
         "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
