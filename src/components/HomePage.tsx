@@ -315,20 +315,20 @@ function HomePage() {
                   Premier Picks
                 </li>
                 {!premierPicksHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 py-3 px-2 ">
+                  <div className="max-w-4xl shadow-md flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 px-2 ">
                     <img
                       className="my-5 h-48 shadow-lg rounded border"
                       src={pp}
                       alt="App gif"
                     />
-                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left flex flex-col justify-center gap-4 my-2">
                       A Premier League predictions app, that enables members to
                       input and edit predictions for upcoming match weeks. The
                       code checks predictions against match scores, awarding
                       points for user accuracy. User points are displayed in the
                       league leaderboard, which is sorted in descending order.
                       <br />
-                      <div className="flex justify-center gap-2 mt-4 flex-wrap md:justify-start">
+                      <div className="flex justify-center gap-2 flex-wrap md:justify-start">
                         <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
                           React
                         </div>
@@ -342,7 +342,7 @@ function HomePage() {
                           Typescript
                         </div>
                       </div>
-                      <p className="my-2 mt-4 font-semibold">
+                      <p className="font-semibold">
                         <a
                           className="underline"
                           target="_blank"
@@ -361,13 +361,14 @@ function HomePage() {
                   Cabbage Patch Protector
                 </li>
                 {!gameHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
+                  <div className="max-w-4xl shadow-md flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 px-2">
                     <img
                       src={cpp}
+                      max-w-3xl
                       alt="Cabbage Patch Protector gameplay gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left flex flex-col justify-center gap-4 my-2">
                       An original twist on the classic Minesweeper game. Cabbage
                       Patch Protector is a JavaScript grid-based game that is
                       playable on desktop across three difficulty levels.
@@ -375,7 +376,7 @@ function HomePage() {
                       marking them with a jar as you go and try to beat your
                       high score!
                       <br />
-                      <div className="flex justify-center gap-2 mt-2">
+                      <div className="flex justify-center gap-2 flex-wrap md:justify-start">
                         <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
                           JavaScript
                         </div>
@@ -386,7 +387,7 @@ function HomePage() {
                           CSS
                         </div>
                       </div>
-                      <p className="my-2 font-semibold">
+                      <p className="font-semibold">
                         <a
                           className="underline"
                           target="_blank"
@@ -405,19 +406,19 @@ function HomePage() {
                   Quiz Game
                 </li>
                 {!quizHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
+                  <div className="max-w-4xl shadow-md flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 px-2 ">
                     <img
                       src={quiz}
                       alt="Quiz Game example gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left flex flex-col justify-center gap-4 my-2">
                       A mutliple choice quiz game, fetching 10 random general
                       knowledge questions from the Open Trivia public API.
                       Players select one of four possible answers, and their
                       score is revealed once the quiz is completed.
                       <br />
-                      <div className="flex justify-center gap-2 mt-2">
+                      <div className="flex justify-center gap-2 flex-wrap md:justify-start">
                         <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
                           React
                         </div>
@@ -428,7 +429,7 @@ function HomePage() {
                           Bulma
                         </div>
                       </div>
-                      <p className="my-2 font-semibold">
+                      <p className="font-semibold">
                         <a
                           className="underline"
                           target="_blank"
@@ -447,20 +448,20 @@ function HomePage() {
                   GourmetVoyage E-Shop
                 </li>
                 {!shopHidden && (
-                  <div className="flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 md:bg-transparent">
+                  <div className="max-w-4xl shadow-md flex flex-col md:flex-row gap-5 items-center -ml-6 sm:mx-0 bg-[#f9f9f8] rounded px-1 px-2">
                     <img
                       src={shop}
                       alt="GourmetVoyage site walkthrough gif"
                       className="my-5 w-96 shadow-lg rounded border"
                     />
-                    <p className="font-body text-sm normal-case font-normal text-center md:text-left">
+                    <p className="font-body text-sm normal-case font-normal text-center md:text-left flex flex-col justify-center gap-4 my-2">
                       Buyers can browse, 'purchase' and leave reviews on
                       products that are posted to the site via the seller
                       portal. Sellers can create, update and edit their products
                       and the have access to a dashboard which shows units per
                       product and total units sold.
                       <br />
-                      <div className="flex justify-center gap-2 mt-2">
+                      <div className="flex justify-center gap-2 flex-wrap md:justify-start">
                         <div className="px-2 rounded uppercase bg-[#e4e2dd] tracking-wider font-bold">
                           React
                         </div>
@@ -474,7 +475,7 @@ function HomePage() {
                           Typescript
                         </div>
                       </div>
-                      <p className="my-2 font-semibold">
+                      <p className="font-semibold">
                         <a
                           className="underline"
                           target="_blank"

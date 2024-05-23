@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import github from "../../assets/github.png"
-import linkedin from "../../assets/linkedin.png"
+import github from "../../assets/github.png";
+import linkedin from "../../assets/linkedin.png";
 
 function Footer() {
   const [emailPopUpHidden, setEmailPopUpHidden] = useState(true);
@@ -21,7 +21,7 @@ function Footer() {
     setFormData({ name: "", email: "", message: "" });
     setEmailJsMessage("");
     setErrorMessage("");
-    setEmailPopUpHidden(true)
+    setEmailPopUpHidden(true);
   }
 
   function handleChange(e: any) {
@@ -164,10 +164,12 @@ function Footer() {
         )}
 
         <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline">
-          LinkedIn
+          <a href="https://www.linkedin.com/in/olivia--darby/" target="_blank">
+            LinkedIn
+          </a>
         </li>
         <li className="list-none my-2 uppercase text-sm tracking-wide font-semibold text-white cursor-pointer hover:underline">
-          GitHub
+          <a href="https://github.com/livdarby" target="_blank"></a>GitHub
         </li>
       </nav>
     </>
